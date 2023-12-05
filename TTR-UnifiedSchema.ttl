@@ -1,0 +1,340 @@
+@prefix TTR: <http://TTR2022.eu/vocab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+###############################################################   Classes   #####################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+
+TTR:Concept	rdf:type	owl:Class;
+				rdfs:label	"Concept";
+				rdfs:comment "Constituents of thoughts or real world entities.";
+				dcterms:modified "2022-10-19"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:Annotation	rdf:type	owl:Class;
+					rdfs:label	"Annotation";
+					rdfs:comment "Annotation of a concept including label, id and source of concept.";
+					dcterms:modified "2022-10-19"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:CancerPatient	rdf:type	owl:Class;
+					rdfs:label	"CancerPatient";
+					rdfs:comment "Cancer Patient independent of type of their cancer.";
+					dcterms:modified "2022-10-19"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:LCPatient	rdf:type	owl:Class;
+				rdfs:label	"LungCancerPatient";
+				rdfs:subClassOf	TTR:CancerPatient;
+				rdfs:comment "A patient who is diagnosed with Lung Cancer.";
+				dcterms:modified "2022-10-19"^^xsd:date;				
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:Age	rdf:type	owl:Class;
+						rdfs:label	"Age";
+						rdfs:comment "The age of patients.";
+						dcterms:modified "2022-10-19"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.						
+
+TTR:Gender	rdf:type	owl:Class;
+						rdfs:label	"Gender";
+						rdfs:comment "The gender of patients.";
+						dcterms:modified "2022-10-19"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:Race	rdf:type	owl:Class;
+						rdfs:label	"Race";
+						rdfs:comment "The race of patients.";
+						dcterms:modified "2022-10-19"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.						
+
+TTR:Biomarker	 rdf:type	owl:Class;
+					rdfs:label	"Biomarker";
+					rdfs:subClassOf	TTR:Concept;
+					rdfs:comment "A biomarker, or biological marker is a measurable indicator of some biological state or condition.";
+					dcterms:modified "2022-10-19"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:BiomarkerObservation	 rdf:type	owl:Class;
+					rdfs:label	"BiomarkerObservation";
+					rdfs:subClassOf	TTR:Observation;
+					rdfs:comment "A biomarker, or biological marker is a measurable indicator of some biological state or condition.";
+					dcterms:modified "2022-10-19"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:PatientHistory	rdf:type	owl:Class;
+						rdfs:label	"PatientHistory";
+						rdfs:subClassOf	TTR:Concept;
+						rdfs:comment "Represents the cancers from which the patient have suffered before.";
+						dcterms:modified "2022-10-20"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:FamilyHistory	rdf:type	owl:Class;
+						rdfs:label	"FamilyHistory";
+						rdfs:subClassOf	TTR:Concept;
+						rdfs:comment "Represents the cancers from which the direct blood relatives of the patient have suffered.";
+						dcterms:modified "2022-10-20"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+TTR:FamilyCancerType	rdf:type	owl:Class;
+						rdfs:label	"FamilyCancerType";
+						rdfs:subClassOf	TTR:Concept;
+						rdfs:comment "Represents the cancers of relatives of the patient have suffered.";
+						dcterms:modified "2022-10-20"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+
+TTR:SmokingHistory	rdf:type	owl:Class;
+				rdfs:subClassOf TTR:Concept;
+				rdfs:label	"Smoking";
+				rdfs:comment "Represents the smoking habits of the patient and people with whom they live.";
+				dcterms:modified "2022-10-21"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:ProgressionRelapse	rdf:type	owl:Class;
+				rdfs:subClassOf TTR:Concept;
+				rdfs:label	"ProgressionRelapse";
+				rdfs:comment "Indicates the existance of progression OR relapse in the patient.";
+				dcterms:modified "2022-10-21"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:CancerType	rdf:type	owl:Class;
+				rdfs:subClassOf TTR:Concept;
+				rdfs:label	"CancerType";
+				rdfs:comment "Indicates the type of the cancer.";
+				dcterms:modified "2022-10-21"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+#################################################################################################################################################																																			
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################### Properties - relationships #################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+
+TTR:hasAge	rdf:type	owl:ObjectProperty;
+				rdfs:label	"hasAge";
+				rdfs:domain	TTR:LCPatient;
+				rdfs:range	TTR:Age;
+				rdfs:comment	"Age value of the patient.";
+				dcterms:modified "2022-11-16"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.		
+
+TTR:gender	rdf:type	owl:ObjectProperty;
+				rdfs:label	"gender";
+				rdfs:domain	TTR:LCPatient;
+				rdfs:range	TTR:Gender;
+				rdfs:comment	"Gender value of the patient.";
+				dcterms:modified "2022-10-19"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+TTR:hasRace	rdf:type	owl:ObjectProperty;
+				rdfs:label	"hasRace";
+				rdfs:domain	TTR:LCPatient;
+				rdfs:range	TTR:Race;
+				rdfs:comment	"Race value of the patient.";
+				dcterms:modified "2022-11-16"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.		
+
+TTR:hasBiomarkerObservation	rdf:type	owl:ObjectProperty;
+								rdfs:label	"hasBiomarkerObservation";
+								rdfs:domain	TTR:LCPatient;
+								rdfs:range	TTR:BiomarkerObservation;
+								rdfs:comment ".";
+								dcterms:modified "2022-10-19"^^xsd:date;								
+								dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.								
+
+TTR:hasBiomarker	rdf:type	owl:ObjectProperty;
+						rdfs:label	"hasBiomarker";
+						rdfs:domain	TTR:Concept;
+						rdfs:range	TTR:Biomarker;
+						rdfs:comment ".";
+						dcterms:modified "2022-10-19"^^xsd:date;					
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.						
+
+TTR:hasPatientHistory	rdf:type        owl:ObjectProperty;	
+							rdfs:label	"hasPatientHistory";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:PatientHistory;
+							rdfs:comment "Connection between patient and her/his cancer history.";
+							dcterms:modified "2022-11-16"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:hasFamilyHistory	rdf:type        owl:ObjectProperty;	
+							rdfs:label	"hasFamilyHistory";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:FamilyHistory;
+							rdfs:comment "Connection between patient and her/his family history.";
+							dcterms:modified "2022-11-16"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:hasFamilyCancerType	rdf:type        owl:ObjectProperty;	
+							rdfs:label	"hasFamilyCancerType";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:CancerType;
+							rdfs:comment "Indicates the type of cancer of the relatives.";
+							dcterms:modified "2022-11-16"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:hasPreviousCancerType	rdf:type        owl:ObjectProperty;	
+							rdfs:label	"hasPreviousCancerType";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:CancerType;
+							rdfs:comment "Indicates whicht type of previous cancer.";
+							dcterms:modified "2022-11-16"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:hasCurrentCancerType	rdf:type        owl:ObjectProperty;	
+							rdfs:label	"hasCurrentCancerType";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:CancerType;
+							rdfs:comment "Indicates the cancer type of the patient.";
+							dcterms:modified "2022-11-16"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:hasSmokingHistory   rdf:type     owl:ObjectProperty;
+							rdfs:label	"hasSmokingHistory";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:SmokingHistory;
+							rdfs:comment "Relation between the patient and their smoking history.";
+							dcterms:modified "2022-10-21"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+TTR:hasProgressionOrRelapse   rdf:type     owl:ObjectProperty;
+							rdfs:label	"hasProgressionOrRelapse";
+							rdfs:domain	TTR:LCPatient;
+							rdfs:range	TTR:ProgressionRelapse;
+							rdfs:comment "Specifies that either of progression or relapse exists.";
+							dcterms:modified "2022-10-21"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+######################################################## Properties - attributes ################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+
+TTR:age	rdf:type owl:DatatypeProperty;	
+				rdfs:label	"age";
+				rdfs:domain	TTR:LCPatient;
+				rdfs:range	rdfs:Literal;
+				rdfs:comment "Indicates the calculated age of the patient.";
+				dcterms:modified "2022-06-02"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+
+
+TTR:city	rdf:type	owl:DatatypeProperty;
+						rdfs:label	"city ";
+						rdfs:domain	TTR:LCPatient;
+						rdfs:range	rdfs:Literal;
+						rdfs:comment "Represents the city of residence of the patient (structured information provided by HUPHM)";
+						dcterms:modified "2022-10-19"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:birthDate	rdf:type	owl:DatatypeProperty;
+						rdfs:label	"birthDate";
+						rdfs:domain	TTR:LCPatient;
+						rdfs:range	rdfs:Literal;
+						rdfs:comment "Represents the birth date of the patient.";
+						dcterms:modified "2022-10-19"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+TTR:biomarkerResult	rdf:type	owl:DatatypeProperty;
+							rdfs:label	"biomarkerResult";
+							rdfs:domain	TTR:Biomarker;
+							rdfs:range	rdfs:Literal;
+							rdfs:comment "Result of the reactive expression of the gene.";
+							dcterms:modified "2022-10-19"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.	
+
+
+TTR:previousCancerType	rdf:type	owl:DatatypeProperty;
+								rdfs:label	"previousCancerType";
+								rdfs:domain	TTR:PatientHistory,
+										TTR:CancerType;
+								rdfs:range	rdfs:Literal;
+								rdfs:comment "Represents the type of previous cancer from which the patient has suffered before.";
+								dcterms:modified "2022-10-20"^^xsd:date;							
+								dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:currentCancerType	rdf:type	owl:DatatypeProperty;
+								rdfs:label	"currentCancerType";
+								rdfs:domain	TTR:PatientHistory,
+										TTR:CancerType;
+								rdfs:range	rdfs:Literal;
+								rdfs:comment "Represents the type of previous cancer from which the patient has suffered before.";
+								dcterms:modified "2022-10-20"^^xsd:date;							
+								dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:numberOfFamilyWithLC	rdf:type	owl:DatatypeProperty;
+									rdfs:label	"numberOfFamilyWithLC";
+									rdfs:domain	TTR:FamilyHistory,
+											TTR:CancerType;
+									rdfs:range	rdfs:Literal;
+									rdfs:comment "Represents the number of family members with lung cancer.";
+									dcterms:modified "2022-10-20"^^xsd:date;							
+									dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:numberOfFamilyWithOtherCancers	rdf:type	owl:DatatypeProperty;
+										rdfs:label	"numberOfFamilyWithOtherCancers";
+										rdfs:domain	TTR:FamilyHistory,
+												TTR:CancerType;
+										rdfs:range	rdfs:Literal;
+										rdfs:comment "Represents the number of family members with cancers other than lung.";
+										dcterms:modified "2022-10-20"^^xsd:date;							
+										dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:familyType	rdf:type	owl:DatatypeProperty;
+									rdfs:label	"familyType";
+									rdfs:domain	TTR:FamilyHistory;
+									rdfs:range	rdfs:Literal;
+									rdfs:comment "Represents the type of family kinship with the patient.";
+									dcterms:modified "2022-10-20"^^xsd:date;								
+									dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:familyCancerType	rdf:type	owl:DatatypeProperty;
+									rdfs:label	"familyCancerType";
+									rdfs:domain	TTR:FamilyHistory,
+											TTR:CancerType;
+									rdfs:range	rdfs:Literal;
+									rdfs:comment "Represents the type of the cancer that the family member had/ has (1=Breast, 2=Head and neck, 3=Germinal tumors, 4=Sarcoma, 5=Central nervous system, 6=Unknown origin carcinoma, 7=Colorrectal, 8=Esophagogastric, 9=Pancreatic, 10=Gall bladder, 11=Liver, 2=Melanoma, 13=Skin no melanoma, 14=Bladder/urinary tract, 15=Renal, 16=Prostate, 17=Uterus/cervical, 18=Lymphoma, 19=Leukemia, 20=Lung, 22=Ovarian, 888=Others, -1=- ).";
+									dcterms:modified "2022-10-20"^^xsd:date;							
+									dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:existenceOf_familyWithCancer	rdf:type	owl:DatatypeProperty;
+													rdfs:label	"existenceOf_familyWithCancer";
+													rdfs:domain	TTR:FamilyHistory,
+															TTR:CancerType;
+													rdfs:range	rdfs:Literal;
+													rdfs:comment "";
+													dcterms:modified "2022-11-27"^^xsd:date;							
+													dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:livingWithSmoker	rdf:type        owl:DatatypeProperty;	
+										rdfs:label	"livingWithSmoker";
+										rdfs:domain	TTR:SmokingHistory;
+										rdfs:range	rdfs:Literal;
+										rdfs:comment "Represents if the patient lives with smokers.";
+										dcterms:modified "2022-10-21"^^xsd:date;
+										dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
+TTR:livedWithSmoker	rdf:type        owl:DatatypeProperty;	
+										rdfs:label	"livedWithSmoker";
+										rdfs:domain	TTR:SmokingHistory;
+										rdfs:range	rdfs:Literal;
+										rdfs:comment "Represents if the patient used to live with smokers.";
+										dcterms:modified "2022-10-21"^^xsd:date;
+										dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
+
