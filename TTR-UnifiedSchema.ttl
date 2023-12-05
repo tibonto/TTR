@@ -20,12 +20,6 @@ TTR:Concept	rdf:type	owl:Class;
 				dcterms:modified "2022-10-19"^^xsd:date;
 				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
 
-TTR:Annotation	rdf:type	owl:Class;
-					rdfs:label	"Annotation";
-					rdfs:comment "Annotation of a concept including label, id and source of concept.";
-					dcterms:modified "2022-10-19"^^xsd:date;
-					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/>.
-
 TTR:CancerPatient	rdf:type	owl:Class;
 					rdfs:label	"CancerPatient";
 					rdfs:comment "Cancer Patient independent of type of their cancer.";
